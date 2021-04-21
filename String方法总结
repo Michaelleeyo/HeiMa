@@ -1,0 +1,36 @@
+java.lang.String 代表字符串
+程序当中所有的双引号字符串，都是String类的对象。
+字符串特点：
+1.字符串的内容永不可变
+2.正是字符串不可改变，所以字符串是可以共享使用的
+3.字符串效果是相当于char[]型字符数组，但是底层原理是byte[]字节数组
+
+创建字符串的常见3+1种方法
+三种构造方法：
+public String():创建一个空白字符串，不包含任何内容
+public String(char[] array)：根据字符数组的内容，来创建对应的字符串
+public String(byte[] array):根据字节数组的内容，来创建对应的字符串
+直接创建：
+String str = "Hello";
+注意：直接写上双引号，就是字符串对象。
+
+字符串常量池：程序当中直接写上的双引号字符串，就是在字符串常量池中。
+对于基本类型哪个来说，==就是数值的比较
+对于引用类型来说，==就是地址值的比较
+双引号直接写的字符串在常量池当中，new的不在池当中
+
+==是进行对象的地址值比较，如果确实需要字符串的内容比较，可以使用两个方法：
+
+public boolean equals(Object obj)：参数可以是任何对象，只有参数是一个字符串并且内容相同的才会给true，否则返回false
+注意事项：
+1.任何对象都能用Object进行接收。
+2.equals方法具有对称性，也就是a.equals(b)和b.equals(a)效果一样
+3.如果比较双方一个常量一个变量，推荐把常量字符串写在前面
+推荐："abc".equal(str)   不推荐str.equals("abc")
+public boolean equalsIgnoreCase(String str)：忽略大小写，内容比较
+
+String 当中与获取相关的常用方法有：
+public int length()：获取字符串当中含有的字符个数，拿到字符串长度。
+public String concat(String str)：将当前字符串和参数字符串拼接成返回值新的字符串
+public char charAt(int index)：获取指定索引位置的单个字符。(索引从0开始)
+public int indexOf(String str)：查找参数字符串在本字符串当中首次出现的索引位置，如果没有返回-1值

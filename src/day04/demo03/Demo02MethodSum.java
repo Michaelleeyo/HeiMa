@@ -1,0 +1,24 @@
+package day04.demo03;
+
+/*
+题目要求：
+定义一个方法：求出1-100之间所有数的和
+
+三要素：
+返回类型：int
+方法名称：getSum
+参数列表：不需要参数
+ */
+public class Demo02MethodSum {
+    public static void main(String[] args) {
+        System.out.println("1加到100，结果是" + getSum());
+    }
+
+    public static int getSum() {
+        int sum = 0;
+        for (int i = 0; i <= 100; i++) {
+            sum = sum + i;
+        }
+        return sum;
+    }
+}
